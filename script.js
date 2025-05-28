@@ -94,6 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const currentPage = pages[currentIndex];
       const reminder = currentPage.querySelector(".reminder");
       if (reminder) reminder.style.display = "block";
-    }, 20000);
+    }, 5000);
   });
   
