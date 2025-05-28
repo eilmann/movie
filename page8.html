@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SAMPAI HATI</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page {
+      background: url('./img/bg.png') center/cover no-repeat fixed;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Space Mono', monospace;
+      color: white;
+      text-align: center;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 3rem;
+      border-radius: 2rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtext {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 2rem;
+      font-weight: bold;
+      font-family: inherit;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-white {
+      background-color: white;
+      color: #111;
+    }
+
+    .btn-red {
+      background-color: #aa2e2e;
+      color: white;
+    }
+
+    .btn-red:disabled {
+      background-color: #572020;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .countdown {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body class="page">
+  <div class="overlay">
+    <h1 class="title">SAMPAI HATI :'(</h1>
+    <p class="subtext">*tunggu button merah nyala untuk confirmkan 👎🏾 ↓</p>
+
+    <div class="button-group">
+      <a href="page7.html">
+        <button class="btn btn-white">GURAU JEEE</button>
+      </a>
+      <button class="btn btn-red" id="rejectBtn" disabled>TANAK KAWAN!!!</button>
+    </div>
+
+    <p class="countdown" id="countdownText">
+      COUNTDOWN SAMPAI BUTTON NYALA:<br>
+      Loading...
+    </p>
+  </div>
+
+  <script>
+    const rejectBtn = document.getElementById("rejectBtn");
+    const countdownText = document.getElementById("countdownText");
+
+    // Target time: 1 year from now
+    const enableDate = new Date();
+    enableDate.setFullYear(enableDate.getFullYear() + 1);
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = enableDate.getTime() - now;
+
+      if (distance <= 0) {
+        rejectBtn.disabled = false;
+        countdownText.textContent = "Button active now. Go ahead, break hearts 😔";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownText.innerHTML = `COUNTDOWN SAMPAI BUTTON NYALA:<br>${days} DAYS ${hours} HOURS ${minutes} MINUTES ${seconds} SECONDS`;
+    };
+
+    updateCountdown(); // Initial call
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>

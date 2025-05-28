@@ -1,0 +1,110 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Mono', monospace;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+  }
+
+  #page1, #page2, #page3, #page4, #page5, #page6, #page7, #page8{
+    background-image: url('img/bg.png');
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 10px;
+  }
+  
+  .title {
+    font-family: "Syncopate", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .caption {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #ccc;
+  }
+  
+  .reminder {
+    margin-top: 2rem;
+    font-size: 1rem;
+    display: none;
+  }
+  
+  /* trailer box */
+  .trailer-box {
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    border-radius: 1rem;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin: 1rem 0;
+  }
+  
+  .trailer-box:hover {
+    transform: scale(1.05);
+  }
+  
+  .next-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.7rem 2rem;
+    background-color: white;
+    color: black;
+    border-radius: 999px;
+    font-family: 'Space Mono', monospace;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  .next-button:hover {
+    background-color: #ddd;
+  }
+
+  .info-box {
+    background-color: rgba(255, 69, 0, 0.25);
+    padding: 1.5rem 2rem;
+    border-radius: 1.5rem;
+    font-family: 'Space Mono', monospace;
+    color: white;
+    width: fit-content;
+    margin: 2rem auto;
+    line-height: 1.8;
+    backdrop-filter: blur(8px);
+    text-align: left;
+  }
+  
+  .info-box ul {
+    padding-left: 1rem;
+    margin: 0;
+  }
+  
+  .info-box li {
+    list-style-type: disc;
+  }
+
+  #reject {
+    background-color: #a53723;
+    color: white;
+  }
+  
+  
