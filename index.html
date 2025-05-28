@@ -1,22 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Movie Date Invitation</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Date Invitation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="page" id="page1">
+<body class="spa">
+  <audio id="bg-music" src="./audio/bg-music.mp3" loop></audio>
+
+  <section id="page1" class="page">
     <div class="overlay">
-        <h1 class="title">HI, ACIK NABILATUN NISA!</h1>
-        <img src="./img/sticker.png" alt="sticker" class="sticker">
-        <div class="reminder" id="reminder1">Tap anywhere to continue 🙈</div>
+      <h1 class="title">HI, ACIK NABILATUN NISA!</h1>
+      <img src="./img/sticker.png" alt="sticker" class="sticker" /><br>
+      <div class="reminder" id="reminder1">Tap anywhere to continue 🙈</div>
     </div>
-     <script src="script.js"></script>
+  </section>
+
+  <section id="page2" class="page hidden">
+    <div class="overlay">
+      <h1 class="title">YOU'RE INVITED TO</h1>
+      <img src="./img/sticker.png" alt="sticker" class="sticker" /><br>
+      <div class="reminder" id="reminder2">Tap anywhere to continue 🙈</div>
+    </div>
+  </section>
+
+  <section id="page3" class="page hidden">
+    <div class="overlay">
+      <h1 class="title">MOVIE DATE W ME</h1>
+      <img src="./img/sticker.png" alt="sticker" class="sticker" /><br>
+      <div class="reminder" id="reminder3">Tap anywhere to continue 🙈</div>
+    </div>
+  </section>
+
+  <section id="page4" class="page hidden">
+    <div class="overlay">
+      <h1 class="title">EXCITED KAN?</h1>
+      <p class="caption">↓ click here ↓</p>
+      <a href="https://www.youtube.com/watch?v=e2PsmMlSP5s" target="_blank">
+        <img src="img/poster.png" alt="Movie Trailer" class="trailer-box" />
+      </a>
+      <p class="caption">↑ movie trailer ↑</p>
+      <p class="caption">
+        – your company matters most, not the movie<br />
+        <em>*wink*</em>
+      </p>
+      <button class="next-button">NEXT ➞</button>
+    </div>
+  </section>
+
+  <section id="page5" class="page hidden">
+    <div class="overlay">
+      <h1 class="title">PROGRAM DETAILS</h1>
+      <div class="info-box">
+        <p>🎥 Movie: Hurry Up Tomorrow</p>
+        <p>⏰ Time : TBD</p>
+        <p>🔑 Place: TBD</p>
+        <br />
+        <p>Obvious participating benefits --&gt;</p>
+        <ul>
+          <li>Discover another The Weeknd masterpiece</li>
+          <li>Free ticket and popcorn</li>
+          <li>Free breakfast / lunch / dinner</li>
+          <li>Get to know each other</li>
+        </ul>
+      </div>
+      <button class="next-button">NEXT ➞</button>
+    </div>
+  </section>
+
+  <section id="page6" class="page hidden">
+    <div class="overlay">
+      <h1 class="title">TEMAN PLEASEEE</h1>
+      <img src="./img/sticker.png" alt="sticker" class="sticker" /><br>
+      <a href="#page7" class="next-button" id="accept">MESTILA MAUU</a>
+      <a href="#page8" class="next-button" id="reject">TAKMAUUU !!!</a>
+    </div>
+  </section>
+
+  <section id="page7" class="page hidden">
+    <div class="overlay">
+      <h1 class="title">LASGOOOO</h1>
+      <p class="caption">*dah agak dah mesti mau punya</p>
+      <img src="./img/sticker.png" alt="sticker" class="sticker"><br>
+      <button class="ws-btn" id="ws" target="_blank" rel="noopener noreferrer">SEND PM TO L 🤵🏿</button>
+      <p class="caption">↑ memerlukan bantuan memilih venue dan masa ↑</p>
+    </div>
+  </section>
+
+  <section id="page8" class="page hidden">
+    <div class="overlay">
+      <h1 class="title">SAMPAI HATI :'(</h1>
+      <p class="subtext">*tunggu button merah nyala untuk confirmkan 👎🏾 ↓</p>
+      <div class="button-group">
+        <a href="#page7" class="next-button btn btn-white">GURAU JEEE</a>
+        <button class="next-button" id="rejectBtn" disabled>TANAK KAWAN!!!</button>
+      </div>
+      <p class="countdown" id="countdownText">
+        COUNTDOWN SAMPAI BUTTON NYALA:<br>
+        Loading...
+      </p>
+    </div>
+  </section>
+
+  <section id="page9" class="page hidden">
+    <div class="overlay">
+      <h1 class="title">THANK YOU NISGERRR,<br> YOU MEMANG THE BEST!</h1>
+      <p class="caption">See you at ws 🤵🏿</p>
+      <img src="./img/sticker.png" alt="sticker" class="sticker" /><br>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    const rejectBtn = document.getElementById("rejectBtn");
+    const countdownText = document.getElementById("countdownText");
+
+    if (rejectBtn && countdownText) {
+      const enableDate = new Date();
+      enableDate.setFullYear(enableDate.getFullYear() + 1);
+
+      const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = enableDate.getTime() - now;
+
+        if (distance <= 0) {
+          rejectBtn.disabled = false;
+          countdownText.textContent = "Button active now. Go ahead, break hearts 😔";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownText.innerHTML = `COUNTDOWN SAMPAI BUTTON NYALA:<br>${days} DAYS ${hours} HOURS ${minutes} MINUTES ${seconds} SECONDS`;
+      };
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+  </script>
 </body>
 </html>

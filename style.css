@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     font-family: 'Space Mono', monospace;
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
   }
   
   .page {
@@ -16,9 +16,25 @@ body, html {
     text-align: center;
     position: relative;
     cursor: pointer;
+    height: 100vh;
+    width: 100vw;
   }
 
-  #page1, #page2, #page3, #page4, #page5, #page6, #page7, #page8{
+  .page {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  .page.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #page1, #page2, #page3, #page4, #page5, #page6, #page7, #page8, #page9{
     background-image: url('img/bg.png');
   }
   
@@ -80,6 +96,22 @@ body, html {
     background-color: #ddd;
   }
 
+  .ws-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.7rem 2rem;
+    background-color: white;
+    color: black;
+    border-radius: 999px;
+    font-family: 'Space Mono', monospace;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  .ws-btn:hover {
+    background-color: #ddd;
+  }
+
   .info-box {
     background-color: rgba(255, 69, 0, 0.25);
     padding: 1.5rem 2rem;
@@ -102,9 +134,21 @@ body, html {
     list-style-type: disc;
   }
 
-  #reject {
+  #reject, #rejectBtn {
     background-color: #a53723;
     color: white;
   }
-  
-  
+
+  #rejectBtn:disabled {
+    background-color: #666 !important;
+    color: #ccc !important;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  #reject:hover,
+    #rejectBtn:hover:not(:disabled) {
+    background-color: #7e291a;
+    color: #fff;
+    opacity: 0.9;
+  }
